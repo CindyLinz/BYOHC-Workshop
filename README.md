@@ -1,7 +1,6 @@
 # BYOHC workshop 活動記錄
 
-### [draft schedule](https://gist.github.com/CindyLinz/975dce9755ebeec6e4a5) by CindyLinz
-
+[draft schedule](https://gist.github.com/CindyLinz/975dce9755ebeec6e4a5) by CindyLinz
 
 ## 自造同學
 
@@ -50,3 +49,7 @@
 [ericpony]: https://github.com/ericpony/
 [a127a127]: https://github.com/a127a127/
 [c3h3]: https://github.com/c3h3/
+
+## 活動記錄
+
+  * [2014.9.24 #1: 實作 Lambda Calculus interpreter](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.9.24.md)
