@@ -1,5 +1,8 @@
 # BYOHC workshop 活動記錄
 
+### [draft schedule](https://gist.github.com/CindyLinz/975dce9755ebeec6e4a5) by CindyLinz
+
+
 ## 自造同學
 
 | 自造者 | 開發平台 | 期待用途 | Repository |
