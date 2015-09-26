@@ -191,6 +191,215 @@
           (expr3, env3) = normal_form(a, env)
     ```
 
+## 測試用範例資料
+
+  * Boolean And 運算: (用來確認函數 app 會動)
+
+    Input:
+
+    ```javascript
+    ["app",["lam","true",["app",["lam","false",["app",["lam","and",["app",["app",["var","and"],["var","true"]],["var","true"]]],["lam","a",["lam","b",["app",["app",["var","a"],["var","b"]],["var","false"]]]]]],["lam","a",["lam","b",["var","b"]]]]],["lam","a",["lam","b",["var","a"]]]]
+    ```
+
+    Output:
+
+    ```javascript
+    ["lam","a",["lam","b",["var","a"]]]
+    ```
+
+    (對應的 lambda expression 是)
+
+    ```
+    (\true
+    (\false
+    (\and
+      (and true) true
+    )(\a \b (a b) false)
+    )(\a \b b)
+    )(\a \b a)
+    ```
+
+    ```
+    \a \b a
+    ```
+
+  * Boolean Not 運算: (用來確認不會發生 capture 的問題, 這邊的 not 是故意採用會發生 capture 的定義法)
+
+    Input:
+
+    ```javascript
+    ["app",["lam","true",["app",["lam","false",["app",["lam","not",["app",["var","not"],["var","true"]]],["lam","p",["lam","a",["lam","b",["app",["app",["var","p"],["var","b"]],["var","a"]]]]]]],["lam","a",["lam","b",["var","b"]]]]],["lam","a",["lam","b",["var","a"]]]]
+    ```
+
+    Output:
+
+    ```javascript
+    ["lam","a",["lam","b",["var","b"]]]
+    ```
+    (如果不幸發生 capture, 應該會拿到)
+    ```javascript
+    ["lam","a",["lam","b",["var","a"]]]
+    ```
+
+    (對應的 lambda expression 是)
+
+    ```
+    (\true
+    (\false
+    (\not
+
+      not true
+
+    )(\p \a \b p b a)
+    )(\a \b b)
+    )(\a \b a)
+    ```
+
+    ```
+    \a \b b
+    ```
+
+
+  * 自然數遞增遞減: (用來確認函數可以重複 app 好幾次)
+
+    Input:
+
+    ```javascript
+    ["app",["lam","+1",["app",["lam","0",["app",["lam","1",["app",["lam","2",["app",["lam","3",["app",["lam","4",["app",["lam","5",["app",["lam","6",["app",["lam","7",["app",["lam","8",["app",["lam","9",["app",["lam","-1",["app",["var","-1"],["app",["var","-1"],["app",["var","-1"],["app",["var","+1"],["app",["var","+1"],["app",["var","+1"],["app",["var","-1"],["app",["var","-1"],["app",["var","-1"],["app",["var","-1"],["var","9"]]]]]]]]]]]],["lam","n",["app",["app",["var","n"],["lam","n-",["var","n-"]]],["var","0"]]]]],["app",["var","+1"],["var","8"]]]],["app",["var","+1"],["var","7"]]]],["app",["var","+1"],["var","6"]]]],["app",["var","+1"],["var","5"]]]],["app",["var","+1"],["var","4"]]]],["app",["var","+1"],["var","3"]]]],["app",["var","+1"],["var","2"]]]],["app",["var","+1"],["var","1"]]]],["app",["var","+1"],["var","0"]]]],["lam","s",["lam","z",["var","z"]]]]],["lam","n",["lam","s",["lam","z",["app",["var","s"],["var","n"]]]]]]
+    ```
+
+    Output:
+
+    ```javascript
+    ["lam","s",["lam","z",["app",["var","s"],["lam","s",["lam","z",["app",["var","s"],["lam","s",["lam","z",["app",["var","s"],["lam","s",["lam","z",["app",["var","s"],["lam","s",["lam","z",["app",["var","s"],["lam","s",["lam","z",["var","z"]]]]]]]]]]]]]]]]]]
+    ```
+
+    (對應的 lambda expression 是)
+
+    ```
+    (\+1
+    (\0
+    (\1 (\2 (\3 (\4 (\5 (\6 (\7 (\8 (\9
+
+    (\-1
+
+      -1 (-1 (-1 (+1 (+1 (+1 (-1 (-1 (-1 (-1 9)))))))))
+
+    )(\n n (\n- n-) 0)
+
+    )(+1 8))(+1 7))(+1 6))(+1 5))(+1 4))(+1 3))(+1 2))(+1 1))(+1 0)
+    )(\s \z z)
+    )(\n \s \z s n)
+    ```
+
+    ```
+    \s \z s (\s \z s (\s \z s (\s \z s (\s \z s (\s \z z)))))
+    ```
+    (就是 5 的 normal form)
+
+  * 自然數加法: (用來確認可以遞迴)
+
+    Input:
+
+    ```javascript
+    ["app",["lam","+1",["app",["lam","0",["app",["lam","1",["app",["lam","2",["app",["lam","3",["app",["lam","4",["app",["lam","5",["app",["lam","6",["app",["lam","7",["app",["lam","8",["app",["lam","9",["app",["lam","Y",["app",["lam","+",["app",["app",["var","+"],["var","3"]],["var","5"]]],["app",["var","Y"],["lam","+",["lam","a",["lam","b",["app",["app",["var","a"],["lam","a-",["app",["var","+1"],["app",["app",["var","+"],["var","a-"]],["var","b"]]]]],["var","b"]]]]]]]],["lam","f",["app",["lam","x",["app",["var","f"],["app",["var","x"],["var","x"]]]],["lam","x",["app",["var","f"],["app",["var","x"],["var","x"]]]]]]]],["app",["var","+1"],["var","8"]]]],["app",["var","+1"],["var","7"]]]],["app",["var","+1"],["var","6"]]]],["app",["var","+1"],["var","5"]]]],["app",["var","+1"],["var","4"]]]],["app",["var","+1"],["var","3"]]]],["app",["var","+1"],["var","2"]]]],["app",["var","+1"],["var","1"]]]],["app",["var","+1"],["var","0"]]]],["lam","s",["lam","z",["var","z"]]]]],["lam","n",["lam","s",["lam","z",["app",["var","s"],["var","n"]]]]]]
+    ```
+
+    Output:
+
+    ```javascript
+    ["lam","s",["lam","z",["app",["var","s"],["lam","s",["lam","z",["app",["var","s"],["lam","s",["lam","z",["app",["var","s"],["lam","s",["lam","z",["app",["var","s"],["lam","s",["lam","z",["app",["var","s"],["lam","s",["lam","z",["app",["var","s"],["lam","s",["lam","z",["app",["var","s"],["lam","s",["lam","z",["app",["var","s"],["lam","s",["lam","z",["var","z"]]]]]]]]]]]]]]]]]]]]]]]]]]]
+    ```
+
+    (對應的 lambda expression 是)
+
+    ```
+    (\+1
+    (\0
+    (\1 (\2 (\3 (\4 (\5 (\6 (\7 (\8 (\9
+
+    (\Y
+
+    (\+
+
+      + 3 5
+
+    )(Y \+ \a \b a (\a- +1 (+ a- b)) b)
+
+    )(\f (\x f (x x)) (\x f (x x)))
+
+    )(+1 8))(+1 7))(+1 6))(+1 5))(+1 4))(+1 3))(+1 2))(+1 1))(+1 0)
+    )(\s \z z)
+    )(\n \s \z s n)
+    ```
+
+    ```
+    \s \z s (\s \z s (\s \z s (\s \z s (\s \z s (\s \z s (\s \z s (\s \z s (\s \z z))))))))
+    ```
+    (就是 8 的 normal form)
+
+  * 無窮遞增數列: (用來確認 app 的時候是先計算函數內部而不是先計算參數)
+
+    Input:
+
+    ```javascript
+    ["app",["lam","+1",["app",["lam","0",["app",["lam","1",["app",["lam","2",["app",["lam","3",["app",["lam","4",["app",["lam","5",["app",["lam","6",["app",["lam","7",["app",["lam","8",["app",["lam","9",["app",["lam","nil",["app",["lam","cons",["app",["lam","Y",["app",["lam","take",["app",["lam","map",["app",["lam","0-1-2-",["app",["app",["var","take"],["var","5"]],["var","0-1-2-"]]],["app",["var","Y"],["lam","0-1-2-",["app",["app",["var","cons"],["var","0"]],["app",["app",["var","map"],["var","+1"]],["var","0-1-2-"]]]]]]],["lam","f",["app",["var","Y"],["lam","go",["lam","ls",["app",["app",["var","ls"],["lam","a",["lam","as",["app",["app",["var","cons"],["app",["var","f"],["var","a"]]],["app",["var","go"],["var","as"]]]]]],["var","nil"]]]]]]]],["app",["var","Y"],["lam","take",["lam","n",["lam","ls",["app",["app",["var","n"],["lam","n-",["app",["app",["var","ls"],["lam","a",["lam","as",["app",["app",["var","cons"],["var","a"]],["app",["app",["var","take"],["var","n-"]],["var","as"]]]]]],["var","nil"]]]],["var","nil"]]]]]]]],["lam","f",["app",["lam","x",["app",["var","f"],["app",["var","x"],["var","x"]]]],["lam","x",["app",["var","f"],["app",["var","x"],["var","x"]]]]]]]],["lam","a",["lam","as",["lam","is-cons",["lam","is-nil",["app",["app",["var","is-cons"],["var","a"]],["var","as"]]]]]]]],["lam","is-cons",["lam","is-nil",["var","is-nil"]]]]],["app",["var","+1"],["var","8"]]]],["app",["var","+1"],["var","7"]]]],["app",["var","+1"],["var","6"]]]],["app",["var","+1"],["var","5"]]]],["app",["var","+1"],["var","4"]]]],["app",["var","+1"],["var","3"]]]],["app",["var","+1"],["var","2"]]]],["app",["var","+1"],["var","1"]]]],["app",["var","+1"],["var","0"]]]],["lam","s",["lam","z",["var","z"]]]]],["lam","n",["lam","s",["lam","z",["app",["var","s"],["var","n"]]]]]]
+    ```
+
+    Output:
+
+    ```javascript
+    ["lam","is-cons",["lam","is-nil",["app",["app",["var","is-cons"],["lam","s",["lam","z",["var","z"]]]],["lam","is-cons",["lam","is-nil",["app",["app",["var","is-cons"],["lam","s",["lam","z",["app",["var","s"],["lam","s",["lam","z",["var","z"]]]]]]],["lam","is-cons",["lam","is-nil",["app",["app",["var","is-cons"],["lam","s",["lam","z",["app",["var","s"],["lam","s",["lam","z",["app",["var","s"],["lam","s",["lam","z",["var","z"]]]]]]]]]],["lam","is-cons",["lam","is-nil",["app",["app",["var","is-cons"],["lam","s",["lam","z",["app",["var","s"],["lam","s",["lam","z",["app",["var","s"],["lam","s",["lam","z",["app",["var","s"],["lam","s",["lam","z",["var","z"]]]]]]]]]]]]],["lam","is-cons",["lam","is-nil",["app",["app",["var","is-cons"],["lam","s",["lam","z",["app",["var","s"],["lam","s",["lam","z",["app",["var","s"],["lam","s",["lam","z",["app",["var","s"],["lam","s",["lam","z",["app",["var","s"],["lam","s",["lam","z",["var","z"]]]]]]]]]]]]]]]],["lam","is-cons",["lam","is-nil",["var","is-nil"]]]]]]]]]]]]]]]]]]
+    ```
+
+    (對應的 lambda expression 是)
+
+    ```
+    (\+1
+    (\0
+    (\1 (\2 (\3 (\4 (\5 (\6 (\7 (\8 (\9
+
+    (\nil
+    (\cons
+
+    (\Y
+
+    (\take
+    (\map
+
+    (\0-1-2-
+
+      take 5 0-1-2-
+
+    )(Y \0-1-2- cons 0 (map +1 0-1-2-))
+
+    )(\f Y \go \ls ls (\a \as cons (f a) (go as)) nil)
+    )(Y \take \n \ls n (\n- ls (\a \as cons a (take n- as)) nil) nil)
+
+    )(\f (\x f (x x)) (\x f (x x)))
+
+    )(\a \as \is-cons \is-nil is-cons a as)
+    )(\is-cons \is-nil is-nil)
+
+    )(+1 8))(+1 7))(+1 6))(+1 5))(+1 4))(+1 3))(+1 2))(+1 1))(+1 0)
+    )(\s \z z)
+    )(\n \s \z s n)
+    ```
+
+    ```
+    \is-cons \is-nil (is-cons (\s \z z)) (\is-cons \is-nil (is-cons (\s \z s (\s \z z))) (\is-cons \is-nil (is-cons (\s \z s (\s \z s (\s \z z)))) (\is-cons \is-nil (is-cons (\s \z s (\s \z s (\s \z s (\s \z z))))) (\is-cons \is-nil (is-cons (\s \z s (\s \z s (\s \z s (\s \z s (\s \z z)))))) (\is-cons \is-nil is-nil)))))
+    ```
+    (就是下面這串的 normal form)
+    ```
+    cons 0 (cons 1 (cons 2 (cons 3 (cons 4 nil))))
+    ```
+
+## 輔助工具
+
+  * [parser](https://cindylinz.github.io/Haskell.js/lambda-parser.html): 把 `\a \b a` 轉換為 `["lam", "a", ["lam", "b", ["var", "a"]]]`
+  * [pretty printer](https://cindylinz.github.io/Haskell.js/lambda-pretty-printer.html): 把 `["lam", "a", ["lam", "b", ["var", "a"]]]` 轉換為 `\a \b a`
+  * [play ground](https://cindylinz.github.io/Haskell.js/lambda-calculus.html): 用 env 法實作的 interpreter
+
 ## Scott encoding
 
 放在這邊當參考, 不過最好不要記住.. 自己想一遍比較有趣 (即使自己想出來的沒有長得完全一樣)
