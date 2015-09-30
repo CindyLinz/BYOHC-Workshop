@@ -191,6 +191,53 @@
           (expr3, env3) = normal_form(a, env)
     ```
 
+## [De Bruijn index](https://www.wikiwand.com/en/De_Bruijn_index) 實作法
+
+[@op8867555](https://github.com/op8867555) 建議使用 De Bruijn index ，避免替換變數名稱。
+
+  * 產生 De Brujin index
+
+    首先幫整棵樹內的 var 都加上 De Bruijn index ，它代表這 var 和往上第 n 層的那個 lambda 綁在一起。 n 從 1 開始。
+
+    依長相來分類處理
+
+    ```
+    -- 實作時也許可以選 0 而不是 Infinity 代表自由變數的 index
+    index(var a, map) → var' a (findWithDefault Infinity a map)
+    ```
+
+    ```
+    index(app f a, map) → app index(f, map) index(a, map)
+    ```
+
+    ```
+    index(lam x y, map) →
+      對每個鍵為 k 的 map 內容 index 產生新 map' ，
+      如果 k 和 x 一樣，
+        則 1 （表示以下的 index 重算）
+        否則 index + 1 （表示又深了一層）
+      lam x index(y, map')
+    ```
+
+  * 替換
+
+    一樣依長相來分類處理
+
+    ```
+    sub(var x [a/x], depth) →
+      如果變數深度是 depth
+        則把 a 內所有自由變數的 index 加上 x 的 index 再減 1
+        否則把 x 的 index 減 1
+    ```
+
+    ```
+    sub(app f a [a/x], depth) → app sub(f [a/x], depth) sub(a [a/x], depth)
+    ```
+
+    ```
+    sub(lam x body [a/x], depth) → lam x sub(body [a/x], depth + 1)
+    ```
+
 ## 測試用範例資料
 
   * Boolean And 運算: (用來確認函數 app 會動)
