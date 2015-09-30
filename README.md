@@ -53,3 +53,7 @@
 ## 活動記錄
 
   * [2014.9.24 #1: 實作 Lambda Calculus interpreter](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.9.24.md)
+
+## 參考資料
+
+  * [REFERENCES.md](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/REFERENCES.md)
