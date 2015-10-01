@@ -7,7 +7,7 @@
 | 自造者 | 開發平台 | 期待用途 | Repository |
 | ------ | -------- | -------- | ---------- |
 | [Cindy][CindyLinz] | Javascript (browser) | 寫一個像 [Scratch](https://scratch.mit.edu/) 的, 在 browser 裡玩的 Haskell 拼圖 | [github](https://github.com/CindyLinz/Haskell.js/) |
-| [Yun-Yan Chi][jaiyalas] | Haskell (native) | 可以對 Haskell 隨意加功能 |  |
+| [Yun-Yan Chi][jaiyalas] | Haskell (native) | 可以對 Haskell 隨意加功能 | [github](https://github.com/jaiyalas/haha) |
 | [Chia-Chi Tsai][rueshyna] | (native) | 還在想 |  |
 | [Chiang, Yi-Yo][silverneko] | (native) | 可以對 Haskell 隨意改語法 |  |
 | [Shuk][BizShuk] | Javascript (node.js) | 寫 web 程式 & 想把開發過程記錄下來 |  |
