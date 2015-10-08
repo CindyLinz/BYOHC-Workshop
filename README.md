@@ -17,7 +17,7 @@
 | [YunLiaw][YunLiaw]                  |                                | 還在想                                                                                   |                                                    |
 | [Kelly/Kai][rasca0027]              |                                | 還在想                                                                                   |                                                    |
 | [AlexLu][op8867555]                 | Python                         | 用 Python 執行的一個用 Haskell 寫的 Haskell compiler                                     |                                                    |
-| [卡西][cassi]                       | WASM or Javascript             | 還在想                                                                                   |                                                    |
+| [卡西][cassi]                       | WASM or Javascript             | 做個 lambda-wasm-prototype 之類的工具                                                    | [github](https://github.com/caasi/ulc.ls)          |
 | [GeorgeLi][Georgefs]                | Python                         | 理解 Haskell                                                                             |                                                    |
 | [Summit][suensummit]                | Python                         | 還在想                                                                                   |                                                    |
 | [Carl][Carl-Lin]                    | Javascript (node.js + browser) | 在公司 production 環境用                                                                 |                                                    |
