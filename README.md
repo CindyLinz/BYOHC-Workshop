@@ -9,7 +9,7 @@
 | [Cindy][CindyLinz]                  | Javascript (browser)           | 寫一個像 [Scratch](https://scratch.mit.edu/) 的, 在 browser 裡玩的 Haskell 拼圖          | [github](https://github.com/CindyLinz/Haskell.js/) |
 | [Yun-Yan Chi][jaiyalas]             | Haskell (native)               | 可以對 Haskell 隨意加功能                                                                | [github](https://github.com/jaiyalas/haha)         |
 | [Chia-Chi Tsai][rueshyna]           | (native)                       | 還在想                                                                                   |                                                    |
-| [Chiang, Yi-Yo][silverneko]         | (native)                       | 可以對 Haskell 隨意改語法                                                                |                                                    |
+| [Chiang, Yi-Yo][silverneko]         | (native)                       | 可以對 Haskell 隨意改語法                                                                | [github](https://github.com/silverneko/Lambda-calculus-interpreter) |
 | [Shuk][BizShuk]                     | Javascript (node.js)           | 寫 web 程式 & 想把開發過程記錄下來                                                       |                                                    |
 | [Lex][LexSong]                      | Python                         | 使用 Python library, 但可以寫 Haskell 不用寫 Python                                      |                                                    |
 | [AlvinChiang][absolutelyNoWarranty] | Python                         | 用 Haskell 寫一個 compiler 把自訂語言生成 latex                                          |                                                    |
