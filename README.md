@@ -52,6 +52,8 @@
 [ericpony]: https://github.com/ericpony/
 [a127a127]: https://github.com/a127a127/
 [c3h3]: https://github.com/c3h3/
+[ucfan]: https://github.com/ucfan/
+[Knight-X]: https://github.com/Knight-X/
 
 ## 活動記錄
 
