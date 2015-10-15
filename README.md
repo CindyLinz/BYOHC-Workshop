@@ -57,7 +57,8 @@
 
 ## 活動記錄
 
-  * [2014.9.24 #1: 實作 Lambda Calculus interpreter](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.9.24.md)
+  * [2015.9.24 #1: 實作 Lambda Calculus interpreter](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.9.24.md)
+  * [2015.10.15 #2: 加上 primitive, lazy evaluation](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.10.15.md)
 
 ## 參考資料
 
