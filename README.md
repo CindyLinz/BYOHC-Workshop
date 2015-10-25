@@ -16,7 +16,7 @@
 | [Pomin Wu][pm5]                     | Go                             | 還在想                                                                                   | [github](https://github.com/pm5/byohc-workshop)    |
 | [YunLiaw][YunLiaw]                  |                                | 還在想                                                                                   |                                                    |
 | [Kelly/Kai][rasca0027]              |                                | 還在想                                                                                   |                                                    |
-| [AlexLu][op8867555]                 | Python                         | 用 Python 執行的一個用 Haskell 寫的 Haskell compiler                                     |                                                    |
+| [AlexLu][op8867555]                 | Python                         | 用 Python 執行的一個用 Haskell 寫的 Haskell compiler                                     | [github](https://github.com/op8867555/BYOHC)       |
 | [卡西][caasi]                       | WASM or Javascript             | 做個 lambda-wasm-prototype 之類的工具                                                    | [github](https://github.com/caasi/ulc.ls)          |
 | [GeorgeLi][Georgefs]                | Python                         | 理解 Haskell                                                                             | [github](https://github.com/georgefs/BYOHC-Workshop)                                                  |
 | [Summit][suensummit]                | Python                         | 還在想                                                                                   |                                                    |
