@@ -66,4 +66,4 @@
 
 ## 心得筆記
 
-  * [caasi][caasi] 2015.10.24 [Build Your Own λ-calculus Interpreter](http://caasih.logdown.com/posts/2015/10/24/build-your-own-lambda)
+  * [卡西][caasi] 2015.10.24 [Build Your Own λ-calculus Interpreter](http://caasih.logdown.com/posts/2015/10/24/build-your-own-lambda)
