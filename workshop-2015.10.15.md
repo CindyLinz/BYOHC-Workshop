@@ -6,7 +6,7 @@
 
 # 測試資料
 
-  * [LCaml](https://github.com/LCamel/) 提供的一組, 用來測試 lazy evaluation (不重複算) 有沒有奏效的資料
+  * [LCamel](https://github.com/LCamel/) 提供的一組, 用來測試 lazy evaluation (不重複算) 有沒有奏效的資料
 
     目前測過速度差異 (同一個人的程式, lazy 與否) 大概在 200x 到 4000x 之間~
 
