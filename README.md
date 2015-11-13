@@ -62,6 +62,16 @@
   * [2015.10.29 #3: 加上 IO FFI](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.10.29.md)
   * [2015.11.12 #4: 將 Haskell 基本語法 compile 成自己的 lambda 程式](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.11.12.md)
 
+## 可嫁接使用的 Lambda interpreter backend
+
+| interpreter 名字 | 作者 | 使用平台 | 實作特色 | 使用方法 |
+| ---------------- | ---- | -------- | -------- | -------- |
+
+## Lambda 應用
+
+| 作品名稱 | 作者 | 使用方法 |
+| -------- | ---- | -------- |
+
 ## 參考資料
 
   * [REFERENCES.md](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/REFERENCES.md)
