@@ -115,6 +115,29 @@
     )
     ```
 
+# haskell-src-exts 使用範例
+
+[https://github.com/CindyLinz/Haskell.js/tree/14946e683398790af75ef1dbad5f1ae54cfa0313/trans](https://github.com/CindyLinz/Haskell.js/tree/14946e683398790af75ef1dbad5f1ae54cfa0313/trans)
+
+我 (CindyLinz) 是這樣用的:
+
+```shell
+$ cd trans
+$ cabal sandbox init
+$ cabal install --only-dependencies
+$ cabal build
+```
+
+執行用
+
+```shell
+$ cabal run
+```
+
+我用的是 GHC 7.8.3, 如果你的版本不一樣, 可能要改一下 `trans.cabal` 裡面指定的 `base` 版號.
+
+從 stdin 輸入 Haskell 原始碼, 從 stdout 印出 parse 結果.
+
 # 延伸討論
 
   * 用 syntax desugar 把泛型函數 reduce 為基本語法示意
