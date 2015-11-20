@@ -183,6 +183,21 @@ $ cabal run
         fff intEqWitness a b
         ```
 
+# basic Haskell sample code
+
+  * [hello\_world.hs](https://github.com/CindyLinz/Haskell.js/blob/master/trans/sample/hello_world.hs)
+      + 需要實作 main, 函數呼叫
+      + library 需要實作 `putStrLn`, `Char` literal, `[Char]`
+
+  * [show\_int.hs](https://github.com/CindyLinz/Haskell.js/blob/master/trans/sample/show_int.hs)
+      + 需要多實作 lambda, primitive (Int) case..of, let..in
+      + library 需要比前一個多實作 `Int` literal, `mod`, `div`
+
+  * [fibs.hs](https://github.com/CindyLinz/Haskell.js/blob/master/trans/sample/fibs.hs)
+      + 需要比前一個多實作 top level definition, GADT, GADT case..of
+      + library 需要比前一個多實作 `(+)`, `(-)`
+      + 程式碼裡面最前出現的 `{-# LANGUAGE ... #-}` 請忽略, 那是為了讓這個程式碼也可以直接用 runghc 執行
+
 # 下次聚會時間
 
 2015.11.26 (四)
