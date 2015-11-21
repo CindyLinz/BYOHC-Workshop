@@ -8,3 +8,6 @@
 * [De Bruijn index](https://www.wikiwand.com/en/De_Bruijn_index) [@op8867555](https://github.com/op8867555) 推薦的 De Bruijn index 可以解決 做 beta reduction 時名稱衝突的問題
 * [A Functional Correspondence between Call-by-Need Evaluators and Lazy Abstract Machines](http://www.brics.dk/RS/04/3/BRICS-RS-04-3.pdf) 一個有用到 de Bruijn index 實作 call by need evaluation 的方法
 
+## Haskell
+
+* [How to desugar Haskell code](http://www.haskellforall.com/2014/10/how-to-desugar-haskell-code.html)
