@@ -11,3 +11,5 @@
 ## Haskell
 
 * [How to desugar Haskell code](http://www.haskellforall.com/2014/10/how-to-desugar-haskell-code.html)
+
+* [Tackling the awkward squad: monadic input/output, concurrency, exceptions, and foreign-language calls in Haskell](http://research.microsoft.com/en-us/um/people/simonpj/papers/marktoberdorf/) SPJ 講 IO
