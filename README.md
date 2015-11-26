@@ -60,7 +60,9 @@
   * [2015.9.24 #1: 實作 Lambda Calculus interpreter](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.9.24.md)
   * [2015.10.15 #2: 加上 primitive, lazy evaluation](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.10.15.md)
   * [2015.10.29 #3: 加上 IO FFI](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.10.29.md)
+
   * [2015.11.12 #4: 將 Haskell 基本語法 compile 成自己的 lambda 程式](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.11.12.md)
+  * [2015.11.26 #5: 分享 transpiler 實作](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.11.26.md)
 
 ## 可嫁接使用的 Lambda interpreter backend
 
