@@ -8,9 +8,7 @@
 
     + 待補
 
-這次 [CindyLinz](https://github.com/CindyLinz/Haskell.js/tree/master/trans) 跟 [AlexLu](https://github.com/op8867555/BYOHC-transpiler) 做了 transpiler 。  
-
-有實作心得的人，分別講解各自的實作。
+這次 [CindyLinz](https://github.com/CindyLinz/Haskell.js/tree/master/trans) 跟 [AlexLu](https://github.com/op8867555/BYOHC-transpiler) 做了 transpiler 。有實作心得的人，分別講解各自的實作。
 
 # CindyLinz
 
@@ -47,7 +45,7 @@ CindyLinz 講解自己的 [trans](https://github.com/CindyLinz/Haskell.js/tree/m
   * 用許多 `mapM` 串起來
   * 做了些 [helper](https://github.com/op8867555/BYOHC-transpiler/blob/master/src/Trans.hs#L145) 來幫忙生 code
 
-  漏記一段
+> 漏記一段
 
   * 沒有用到 cabal ，用了 stack ， stack 預設就用 cabal sandbox
   * 苦主每次更新 Arch ，就得把 cabal 裡所有的 modules 都重裝一次 QAQ
@@ -60,7 +58,7 @@ CindyLinz 講解自己的 [trans](https://github.com/CindyLinz/Haskell.js/tree/m
   * [Language.Haskell.Exts.SrcLoc](https://hackage.haskell.org/package/haskell-src-exts-1.17.0/docs/Language-Haskell-Exts-SrcLoc.html)?
   * [這段](https://github.com/op8867555/BYOHC-transpiler/blob/master/src/Trans.hs#L102)被 CindyLinz 說很像 Core ，只是沒有 type
 
-  CindyLinz 建議這次結束可以先讀 Hindley-Milner type inference 演算法。不用實作，先讀懂就好。
+CindyLinz 建議這次結束可以先讀 Hindley-Milner type inference 演算法。不用實作，先讀懂就好。
 
 # LCamel
 
@@ -68,7 +66,7 @@ CindyLinz 講解自己的 [trans](https://github.com/CindyLinz/Haskell.js/tree/m
   * 使用 [De Bruijn Index](https://github.com/LCamel/BuildYourOwnHaskellCompiler/tree/master/src/main/java) ， 見 `Db*.js`
   * 正在講 internal function 的參數該怎麼化簡，明知 AST 一定有 normal form ，不能以任意順序 evaluate 的話不開心
 
-  CindyLinz 表示 LCamel 又提出了自己沒想到的問題 (Y)
+CindyLinz 表示 LCamel 又提出了自己沒想到的問題 (Y)
 
   * subs 參數會被 evaluate 兩遍的問題， LCamel 表示還不清楚，哪時 subgraph 可以被安心的重用
   * CindyLinz 表示參數一樣就可以用，要是遇到 World ，則要假設都不一樣
@@ -77,7 +75,7 @@ CindyLinz 講解自己的 [trans](https://github.com/CindyLinz/Haskell.js/tree/m
 
 # 延伸討論
 
-  * AlexLu 好像找到了 Java 寫的 Haskell parser ？
+  * AlexLu 找到了 Java 寫的 [Haskell parser](https://github.com/carymrobbins/intellij-haskforce/tree/master/src/com/haskforce/parsing) ？
   * CindyLinz 提到可以寫： `class F (A a b c)` ，但是不能寫： `class F (A a) (B b)` ，語法不會多很多。但是 `for all` 就會多很多。
   * CindyLinz 再次強調大家都用 Haskell 寫 desugar 的話，可以互相重用。
   * LCamel 考慮在 Java 中跑 JavaScript engine ！
