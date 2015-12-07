@@ -30,7 +30,7 @@ CindyLinz 講解自己的 [trans](https://github.com/CindyLinz/Haskell.js/tree/m
   * 本來規劃的「支援 desugar, type inference 之後的程式碼」和「作出上列基本語法範圍內的 type inference / type check (之一)」實際上會混在一起做
   * GADTs...（待補）
   * 要考慮 case 遇到 native （`I# 0#` 和 `0#`）時怎麼作
-  * user 寫的 case 順序可能和 GADTs 不同，得幫他補，並調順序
+  * user 寫的 case 順序可能和 GADTs 不同，得幫他補，並調順序（可能是指 [792e247 中對 fibs.hs 的修改](https://github.com/CindyLinz/Haskell.js/commit/792e24757b3900d64f027324561a4c60deeb7139) ）
   * `_` 不是變數，是 WildCard ， `[]` 是 PList 不是 List
   * 都是執行才爆炸
   * 希望將來可以直接使用 GHC 的 Prelude
