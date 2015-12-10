@@ -2,13 +2,8 @@ CindyLinz: 剛開始學的時候會卡住，慘的是，連為什麼卡住都不
 
 # 本次目標
 
-  * 主線目標：
-
-    + 分工寫 desugar
-
-  * 支線目標：
-
-    + 無
+  * 寫 desugar: where, if..then..else, [1,3,2,4,5]
+  * 繼續自修 type check/inference 的資料
 
 # AlexLu
 
@@ -56,7 +51,7 @@ CindyLinz: 剛開始學的時候會卡住，慘的是，連為什麼卡住都不
   * Haskell tuple 的寬度不一樣不能簡單的 iterate 過去，就有人用 TH 生處理這狀況的 code 。（來源請求）
   * [`reify`](https://hackage.haskell.org/package/template-haskell-2.7.0.0/docs/Language-Haskell-TH.html#v:reify) 用來讀出 Data 的結構。
   * 因為都是 [Show](https://hackage.haskell.org/package/base-4.5.0.0/docs/Text-Show.html#t:Show) ，可以都 `show` 出來看看，再繼續寫。
-  * 本來寫的版本是直接生出字串，但那樣會變成要把字串跟能用的函數接起來才行。（聽不太懂）
+  * 本來寫的版本是直接生出字串，但那樣就沒辦法依據 `getArgs` 傳入的 module name 和 prefix 生出不同的 code, 我們需要把靜態字串跟吃進來的名字接起來才行。
   * CindyLinz 以 [`go res seen (nameStr : others)`](https://github.com/CindyLinz/Haskell.js/blob/cca5df022a096f1bc0c5bb3cec202821e4d0908d/trans/desugar-template-src/DeriveTemplate.hs#L102) 那段來 demo ，可以寫精神上很像 C  的迴圈。沒有撞名不用加數字，有撞名才加數字。臨時用的半成品函數很難取名字，只有在該 context 才看得懂。建議不要用在很長的地方，不然要記住 go1, go2 是什麼，到 go5 就搞不清楚...：
 
   ```
