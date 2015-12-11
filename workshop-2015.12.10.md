@@ -9,7 +9,7 @@ CindyLinz: 剛開始學的時候會卡住，慘的是，連為什麼卡住都不
 
   * Alex: 這週做了 [FFI](https://github.com/op8867555/BYOHC-transpiler/blob/2136f167aa1a7e5877b29954a27f74525d965c07/src/Trans.hs#L274) 模組， python 寫的 function 會拿到 de Bruijn indexed AST ，傳回 AST 。
 
-    例如執行 `stack exec transpiler-exe hello.hs | PYTHONPATH=. python LC_db_lazy_env.py -m hello` 時， [`/example/ffi/hello.hs`](https://github.com/op8867555/BYOHC-transpiler/blob/d34960c7165af60f0229e1d9a6ad8811631f42b7/example/ffi/hello.hs)  會將：
+    例如執行 `stack exec transpiler-exe hello.hs | PYTHONPATH=. python LC_db_lazy_env.py -m hello` 時， [`/example/ffi/hello.hs`](https://github.com/op8867555/BYOHC-transpiler/blob/d34960c7165af60f0229e1d9a6ad8811631f42b7/example/ffi/hello.hs)  會被：
 
     ```
     foreign import ccall "hello.hello" hello :: Int -> String

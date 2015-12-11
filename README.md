@@ -63,6 +63,7 @@
 
   * [2015.11.12 #4: 將 Haskell 基本語法 compile 成自己的 lambda 程式](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.11.12.md)
   * [2015.11.26 #5: 分享 transpiler 實作](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.11.26.md)
+  * [2015.12.10 #6: 寫 desugar 、自修 type check/inference](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.12.10.md)
 
 ## 可嫁接使用的 Lambda interpreter backend
 
