@@ -7,7 +7,49 @@ CindyLinz: 剛開始學的時候會卡住，慘的是，連為什麼卡住都不
 
 # AlexLu
 
-  * Alex: 這週做了 [FFI](https://github.com/op8867555/BYOHC-transpiler/blob/2136f167aa1a7e5877b29954a27f74525d965c07/src/Trans.hs#L274) 模組， python 寫的 function 會拿到 de Bruijn indexed AST ，傳回 AST 。（待補 `ffi_test.hs`）
+  * Alex: 這週做了 [FFI](https://github.com/op8867555/BYOHC-transpiler/blob/2136f167aa1a7e5877b29954a27f74525d965c07/src/Trans.hs#L274) 模組， python 寫的 function 會拿到 de Bruijn indexed AST ，傳回 AST 。
+
+    例如執行 `stack exec transpiler-exe hello.hs | PYTHONPATH=. python LC_db_lazy_env.py -m hello` 時， [`/example/ffi/hello.hs`](https://github.com/op8867555/BYOHC-transpiler/blob/d34960c7165af60f0229e1d9a6ad8811631f42b7/example/ffi/hello.hs)  會將：
+
+    ```
+    foreign import ccall "hello.hello" hello :: Int -> String
+
+    main = putStrLn (hello 1)
+    ```
+
+    轉成：
+
+    ```
+    ["app",
+      ["app",
+        ["var","Y"],
+        ["lam","##gen",["lam","##tuple",
+          ["app",
+            ["app",
+              ["lam","hello",["lam","main",
+                ["app",
+                  ["app",
+                    ["var","##tuple"],
+                    ["prim","ffi","hello.hello"]],
+                  ["app",
+                    ["var","putStrLn"],
+                    ["app",
+                      ["var","hello"],
+                      ["prim","int",1]]]]]],
+              ["app",
+                ["var","##gen"],
+                ["lam","hello",["lam","main",["var","hello"]]]]],
+            ["app",
+              ["var","##gen"],
+              ["lam","hello",["lam","main",["var","main"]]]]]]]],
+      ["lam","hello",["lam","main",
+        ["app",
+          ["var","runIO"],
+          ["var","main"]]]]]
+    ```
+
+    `LC_db_lazy_env.py` 會把 `["prim","ffi","hello.hello"]` 吃到的參數，交給 [`hello.py`](https://github.com/op8867555/BYOHC-transpiler/blob/d34960c7165af60f0229e1d9a6ad8811631f42b7/example/ffi/hello.py) 處理。
+
   * CindyLinz: Haskell 的 FFI ，在 C 中看到的是 C 的 data type ，在 Haskell 看到的是 Haskell 的 data type 。如果兩邊看到的都是一樣的資料結構，不會有 overhead 。（應補上 Perl 的部分）
   * 本來是想做成像 inline FFI ，現在好像改掉了。（以 [purescript-easy-ffi](https://github.com/pelotom/purescript-easy-ffi) 的版本當範例）
   * CindyLinz: GHC 有規定 FFI 的格式。
