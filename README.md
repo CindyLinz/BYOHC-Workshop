@@ -65,15 +65,33 @@
   * [2015.11.26 #5: 分享 transpiler 實作](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.11.26.md)
   * [2015.12.10 #6: 寫 desugar 、自修 type check/inference](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.12.10.md)
 
-## 可嫁接使用的 Lambda interpreter backend
+## 輔助工具
 
-| interpreter 名字 | 作者 | 使用平台 | 實作特色 | 使用方法 |
-| ---------------- | ---- | -------- | -------- | -------- |
+  * lambda playground
 
-## Lambda 應用
+      + [Lambda Calculus playground (卡西)](https://caasi.github.io/ulc-playground/)
 
-| 作品名稱 | 作者 | 使用方法 |
-| -------- | ---- | -------- |
+        有 IO
+
+      + [Lambda Calculus playground (CindyLinz)](https://cindylinz.github.io/Haskell.js/lambda-calculus.html)
+
+        純 lambda
+
+      + [Lambda parser (CindyLinz)](https://cindylinz.github.io/Haskell.js/lambda-parser.html)
+
+        Lambda to JSON
+
+      + [Lambda pretty printer (CindyLinz)](https://cindylinz.github.io/Haskell.js/lambda-pretty-printer.html)
+
+        JSON to Lambda
+
+  * desugar
+
+      + [配合 haskell-src-exts syntax tree 長相生成對應的處理函數](https://github.com/CindyLinz/Haskell.js/tree/master/trans)
+
+        ```shell
+        $ cabal run desugar-template [module name] [function name prefix] [mode: 0.normal / 1.annotated] [# of additional arguments] > [module name .hs]
+        ```
 
 ## 參考資料
 
