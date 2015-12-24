@@ -182,6 +182,140 @@
   * silverneko 最近在上 compiler 課，猶豫要先做 transpiler 還是 codegen 。現在 codegen 還沒有做 IR 。 ASM 還要做一些資源的管理， IR 不用。
   * CindyLinz 問到有沒有試過 IR 中的最大整數？有 (2^24) bits 大小的整數可以試試。可以說是組語內建大數運算！第一個 bit 放 0 ，後面都放 1 ，自己加自己，看能不能做。
 
+# 聚會中用到的 Pattern 相關 extensions sample code
+
+  * t1.hs
+    ```haskell
+    -- Guard, PatternGuard, ViewPattern, PatternSynonyms
+    main = do
+      let x = 3 in case Just 5 of
+        _ | False -> putStrLn "Any"
+          | let {y=z; z=4}, x==y -> putStrLn "Any otherwise"
+        Just a | a == 3 -> putStrLn "Just 3"
+        Nothing -> putStrLn "Nothing"
+        --x | ... ->
+        Just a | a == 4 -> putStrLn "Just 4"
+               | otherwise -> putStrLn "Just a"
+
+    --let a = 3
+
+    --case 3 of a ->
+
+    --let
+    --  det = b*b - 4*a*c
+    --  msg =
+    --    if det == 0 then
+    --      "重根"
+    --    else if det < 0 then
+    --      "沒有實根"
+    --    else
+    --      "二實根"
+    --
+    --  msg | det == 0 = "重根"
+    --      | det < 0 = "沒有實根"
+    --      | otherwise = "二實根"
+
+    --1234, "aoeusoetnuh", 'a'
+    --Just a, Nothing, Right (Just a)
+    --abc, _
+    --
+    --case abc of
+    --  Nothing ->
+    --  Just (Just a) ->
+    --  --Just b ->
+    --  xx | 3 == 4 ->
+    --  Just b -> 
+    --
+    --case abc of
+    --  Nothing ->
+    --  Just x -> case x of
+    --    Just a ->
+    --    xxxx -> f
+    --
+    --xx -> f
+    --
+    --
+    --
+    --
+    --
+    --  Just a | a ==3 ->
+    --         | a ==4 ->
+    --  Just b ->
+    --  _ ->
+    --
+    --
+    --
+    --f 3 = 242343
+    --f a | Just index <- find = a + 1
+    --
+    --g (Just a) = a
+    --g (Nothing) = 0
+    --
+    --where
+    -- (a,b) = (1,2)
+    --
+    --let
+    -- (a,b) = (1,2)
+    --in
+    ```
+
+  * t2.hs
+    ```haskell
+    {-# LANGUAGE PatternSynonyms, ViewPatterns #-}
+    data Celcius = Celcius Double
+    pattern Fahrenheit f <- Celcius ((\c -> c * 9 / 5 + 32) -> f) where
+      Fahrenheit f2 = Celcius $ (f2 - 32) * 5 / 9
+
+    main = do
+      let temp = Fahrenheit 33
+      --let temp = Fahrenheit 31
+      --let temp = Celcius 1
+      --let temp = Celcius (-1)
+      case temp of
+        Fahrenheit x | x < 32 -> putStrLn "iced"
+                     | otherwise -> putStrLn "not iced"
+    ```
+
+  * t3.hs
+    ```haskell
+    {-# LANGUAGE ViewPatterns #-}
+
+    main = do
+      case (read, "123") of
+        (f, (f -> 123)) -> putStrLn "got 123"
+        --(f, ((\str -> read str) -> 123)) -> putStrLn "got 123"
+        _ -> putStrLn "failed"
+
+    --  case bs of
+    --    (toString bs -> "abc") -> 
+
+    --  case ("123", read) of
+    --    ((f -> 123), f) -> putStrLn "got 123"
+    --    _ -> putStrLn "failed"
+
+      case (read, "123") of
+        (f, v) | 123 <- f v -> putStrLn "got 123"
+        _ -> putStrLn "failed"
+
+      case ("123", read) of
+        (v, f) | 123 <- f v -> putStrLn "got 123"
+        _ -> putStrLn "failed"
+
+    --  case abc of
+    --    .... | Just index <- find aoeuoeau, Just index2 <- find ... -> 
+    ```
+
+  * t4.hs
+    ```haskell
+    main = do
+      case undefined of
+        --_ | a <- 123, b <- a -> putStrLn $ show a ++ " " ++ show b
+        --_ | b <- a, a <- 123 -> putStrLn $ show a ++ " " ++ show b
+        _ | let { b = a ; a = 123 } -> putStrLn $ show a ++ " " ++ show b
+        --
+        --_ | Just x <- let a = 3 in Just a -> putStrLn $ "Good" ++ show x
+    ```
+
 # 下次聚會時間
 
 2016.01.14(四)
