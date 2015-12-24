@@ -184,7 +184,9 @@
 
 # 聚會中用到的 Pattern 相關 extensions sample code
 
-  * t1.hs
+  都可以用 `runghc` 直接執行。
+
+  * [t1.hs](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.12.24/t1.hs)
     ```haskell
     -- Guard, PatternGuard, ViewPattern, PatternSynonyms
     main = do
@@ -259,7 +261,7 @@
     --in
     ```
 
-  * t2.hs
+  * [t2.hs](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.12.24/t2.hs)
     ```haskell
     {-# LANGUAGE PatternSynonyms, ViewPatterns #-}
     data Celcius = Celcius Double
@@ -276,7 +278,7 @@
                      | otherwise -> putStrLn "not iced"
     ```
 
-  * t3.hs
+  * [t3.hs](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.12.24/t3.hs)
     ```haskell
     {-# LANGUAGE ViewPatterns #-}
 
@@ -305,7 +307,7 @@
     --    .... | Just index <- find aoeuoeau, Just index2 <- find ... -> 
     ```
 
-  * t4.hs
+  * [t4.hs](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.12.24/t4.hs)
     ```haskell
     main = do
       case undefined of
