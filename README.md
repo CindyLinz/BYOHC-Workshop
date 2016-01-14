@@ -64,7 +64,8 @@
   * [2015.11.12 #4: 將 Haskell 基本語法 compile 成自己的 lambda 程式](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.11.12.md)
   * [2015.11.26 #5: 分享 transpiler 實作](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.11.26.md)
   * [2015.12.10 #6: 寫 desugar 、自修 type check/inference](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.12.10.md)
-  * [2015.12.24 #7: pattern matching 相關的 extensions ](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.12.24.md)
+  * [2015.12.24 #7: pattern matching 相關的 extensions](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.12.24.md)
+  * [2016.1.14 #8: 補充上次漏講的 pattern matching 語法，聊聊 symbol table 的實作](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2016.1.14.md)
 
 ## 輔助工具
 
@@ -100,4 +101,4 @@
 
 ## 心得筆記
 
-  * [卡西][caasi] 2015.10.24 [Build Your Own λ-calculus Interpreter](http://caasih.logdown.com/posts/2015/10/24/build-your-own-lambda)
+  * [卡西][caasi] [Build Your Own Haskell Compiler 系列心得](http://caasih.logdown.com/tags/BYOHC)
