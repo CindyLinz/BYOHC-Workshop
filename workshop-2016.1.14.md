@@ -173,7 +173,7 @@
   * LCamel 提到現在停在 checkout Haskell.js 到 show 可以跑。
   * LCamel 表示不明白 desugar 後， JS 的成分有多少？ CindyLinz 表示 roadmap 第三段（註：讓 Lambda Calculus 在你的世界裡飛 -- 實作 compiler），就會直接生出很多 JS ，那時會像 petercommand 講的那樣（STG）。現在 interpreter 就會是 lambda 加上一點點的 JS 。 AlexLu 的實作的話， lambda 裡面沒有 python （沒用到 switch ，而是生一段用到 `==` 的 Haskell `if ... else ...`），但 CindyLinz 的 lambda 裡面會有些 JS 。
   * CindyLinz 展示了她的 trans 後的結果給大家看。 Primitive 裡面是塞 JS 進去。（註：不確定是不是指 `['dat', String.fromCharCode(44)]` 。）
-  * AlexLu 表示 Haskell report 有規定 syntax ，但是沒有規定要怎麼實作。
+  * AlexLu 表示 Haskell report 有規定 semantic ，但是沒有規定要怎麼實作。
   * caasi 表示 SPJ 寫的 [The Implementation of Functional Programming Languages](https://news.ycombinator.com/item?id=10609960) 有提到 STG machine 的前身， G-machine 的由來和初衷。（十三章介紹 supercombinator ，十七章介紹 GC ， 十八章開始的 Part III 則講 G-machine ） 
   * STG 這名字超爛的， S 跟 T 是沒有 S （Spineless）跟沒有 T （Tagless）...。
   * CindyLinz 繼續解釋他的 env 的用途。如果整個 top level 的定義都在 Y combinator 裡面的話，寫 primitive functions 會用不到，但在 env 裡面就可以隨便用。
