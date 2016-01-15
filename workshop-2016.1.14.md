@@ -96,7 +96,13 @@
   * 如果 local symbol table 做完，就可以 rename ，不用擔心這個問題。
   * AlexLu 的 desugar 是個 Monad ，有 global state 可以用。花了很多時間在研究 TH 要怎麼改。（**之後應補上 AlexLu 的程式碼**，並取一段明顯的例子出來。）
   * CindyLinz 表示 compile 最慢的一段是把變數名稱跟字串串起來哪段，本來用 `++` 很慢，改用 `<>` 有快一點點。
-  * AlexLu 最後是重寫，把 AST 拿出來變成 String 。（stringE ，**之後應補上程式碼**）
+  * AlexLu 最後是重寫，把 AST 拿出來[變成 String ](https://github.com/op8867555/BYOHC-transpiler/blob/1a5b5e7e6da30825ccd757370297f3c5e321d41e/utils/gen-template/Lib.hs#L36)。
+
+    ```
+    stringE . HSE.prettyPrint $
+        hModule emptySrcLoc "Desugar.Pass" imports decls
+    ```
+
   * Just 又 Just 的狀況應該還是拆成多層的，或者把 `Just (Just a)` 變成 `Just al@(Just a)` 。
   * 「才兩個人就已經接不起來了」， CindyLinz 表示大家的程式沒辦法混用，而且每個人的資料結構還會一直改...。如果混用的價值不大，那可以用其他語言寫 desugar 也沒關係。
   * LCamel 表示需要 parse 過的 AST ， CindyLinz 表示可以用 [src-exts](https://hackage.haskell.org/package/haskell-src-exts) `show` 出來的字串，給 C 啊 Python parse 。
