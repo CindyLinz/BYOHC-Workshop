@@ -23,10 +23,27 @@
   * 表示沒有改到很多，所有 XXXName 改成 XXXHead 。
   * 可以把 id 都拿掉嗎？CindyLinz 表示 "patches welcome" 。
   * 有 [Language.Haskell.Exts.Annotated.Build](https://hackage.haskell.org/package/haskell-src-exts-1.17.1/docs/Language-Haskell-Exts-Annotated-Build.html) 可以用。
-  * 把 guard 改成 let 。（**待問**
+  * 把 where 改成 let 。
+
+    ```
+    -- DeWhere.hs 中有三段，都是把 where 變成 let
+    deWhereAlt (Alt l1 pat (UnGuardedRhs l2 exp) (Just binds)) =
+      deWhereAlt (Alt l1 pat (UnGuardedRhs l2 (Let l2 binds exp)) Nothing)
+    deWhereDecl (PatBind l1 pat (UnGuardedRhs l2 exp) (Just binds)) =
+      deWhereDecl (PatBind l1 pat (UnGuardedRhs l2 (Let l2 binds exp)) Nothing)
+    deWhereMatch (Match l1 name pat (UnGuardedRhs l2 exp) (Just binds)) =
+      deWhereMatch (Match l1 name pat (UnGuardedRhs l2 (Let l2 binds exp)) Nothing)
+    ```
+
   * CindyLinz 表示之後要做 reorder 。
   * CindyLinz 表示在沒有 slot 時，把空的跟 Nothing 放在一樣的位置是有好處的。
-  * transExp 與 qualification 。（**待問**
+  * transExp 與 qualification 。
+
+    ```
+    data MyList a = Nil | Cons a (MyList a)
+    xs = [1, 2, 3] -- 需要分清楚 Cons 是指 built-in 的，而非其他模組定義的
+    ```
+
   * CindyLinz 表示，體會到為什麼 `data` 只能用在 top level ，有時候會寫到很大的函數，那裡面就像個子空間一樣，會希望能在裡面用。
 
 # CindyLinz
@@ -125,7 +142,6 @@
   * 把右邊的東西丟進去算一下看等不等於 `->` 右邊的東西。
   * 可以用任意 expression ，只有左邊已經抓到的東西可以用，跟 PatternGuard 全部抓到的都能用不同。
   * 以上面的華氏攝氏為例，可以用來在省變數。
-  * silverneko 問到這時若用了 `flipTuple` 在 `(read, "123")` 會怎樣。（**待問，所以到底會怎樣...？**
   * list of polymorphism 的東西，一個欄位是資料，另外一個是用來開箱的東西。
   * 先寫資料，後寫函數，想用後面的函數來執行，就失敗。（但後面又可以？
   * 名字打架時，誰會遮誰的問題。
