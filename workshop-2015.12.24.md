@@ -15,7 +15,7 @@
 
   * 也是改了以後才發現 Annotated.Syntax 和本來的 Syntax 完全不一樣。
   * CindyLinz 表示根本像是不同人寫的。
-  * silverneko 提到也許 Free Comonad 可以在 ???? 上開洞。（**待問， function 還是 type ？**
+  * silverneko 提到 Cofree Comanad 可以在 type 上加東西。
   * CindyLinz 表示也許 desugar 後發現有些 syntax 不會出現，我們就不用做。
   * Annotated 版本沒寫就給我們 Nothing 。
   * 又討論到 Annotated 是 Functor ， AST 全部都是 Annotated ，可以用 `fmap` 跟 `amap` 改變 annotation 。
@@ -65,8 +65,8 @@
   * `Just a | a ==3 ->` 在 pattern 後面可以有 guard 。
   * 在沒有 guard 時，我們會把春夏秋冬的函數都塞給他，讓他呼叫對的函數。
   * `Just (Just a)` 和 `Just d` ，先都當成 `Just x` ，然後再往下（`case x of`）繼續做 pattern matching 。
-  * 但這樣做的話， fallback 時要撤退回上一層（CindyLinz 決定把後面的 pattern 也複製到在內層的 fallback ）。（**應補上範例**
-  * 上述的狀況在有 guards 時會變得很複雜。（**應補上範例**
+  * 但這樣做的話， fallback 時要撤退回上一層（CindyLinz 決定把後面的 pattern 也複製到在內層的 fallback ）。
+  * 上述的狀況在有 guards 時會變得很複雜。
 
     [hlint](https://hackage.haskell.org/package/hlint) 會抱怨以下的程式：
 
@@ -90,7 +90,7 @@
         | otherwise = "二重根"
     ```
 
-  * MultiwayIf 在有 side-effect 時的好處。（**應補上範例**
+  * MultiWayIf 在有 side-effect 時的好處。覺得在 do-notation 裡面才會想到要用它，如果在 let 或 where 定義東西, 用 guard 就好了。
   * PatternGuards 可以在寫 guard 的地方做 pattern matching ，似乎是預設的了。可以寫好幾個。
 
     ```
