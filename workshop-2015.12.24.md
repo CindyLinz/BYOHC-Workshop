@@ -50,9 +50,9 @@
 
   * 講了 [DeWhere](https://github.com/CindyLinz/Haskell.js/blob/d950c5ed4693e4423c655f33766c1c141b74c8f3/trans/src/DeWhere.hs) 。
   * CollectData.hs 把程式中所有用到 `data` 的地方都蒐集（[DataShape](https://github.com/CindyLinz/Haskell.js/blob/d950c5ed4693e4423c655f33766c1c141b74c8f3/trans/src/CollectData.hs#L14)）起來，找出順序。
-  * 洞的數量也很重要。
-  * 用名字的方式描述洞。（**待問**
-  * type name 到長相、 data constructor 到長相。（**待問**
+  * [洞的數量](https://github.com/CindyLinz/Haskell.js/blob/508534d27d3be9d01419439d1ef1fbd21339c716/trans/src/CollectData.hs#L16)也很重要。
+  * 用名字的方式描述洞。（指 record syntax ）
+  * type name 到長相、 data constructor 到長相。（`DataDecl -> CollectDataResult`, `GDataDecl -> CollectDataResult`）
   * 現在用的 name 不是 qualified ，會打架。
   * top level 的好處，是大家的名字都不一樣，如果在 function 裡面可以寫 `data` ，那要處理撞名。
   * 曾到 #haskell 抱怨，希望能有上述的功能。只有少數人也希望有這個功能。
