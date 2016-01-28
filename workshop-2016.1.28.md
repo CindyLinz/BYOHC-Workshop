@@ -94,7 +94,7 @@
 * 錯誤輸出時除了 [Haskell.Src.Exts][1] 的結構外，也噴了 prettyPrint 版。
 * 「prettyPrint 其實也不是很 pretty 啦。」
 * 有些已知 bug ，但（似乎）不是無法輸出的原因。
-* `Just (Just ...` 好像被拆開了，還在找原因。
+* `Just (Just ...` 好像被拆開了，還在找原因。（五個小時後 CindyLinz [修正了這個問題][bf498e9]
 * pattern matching 一層層進去時，只有一個 `x` 時沒關係，但是有 `x1`, `x2` 時還是會打架。
 * favonia 聯想到，也許可以看看 SML 是怎麼做的。
 * AlexLu 之前讀 report ，說是一行行做的。
@@ -115,6 +115,7 @@
 
 [1]: https://hackage.haskell.org/package/haskell-src-exts
 [2]: https://github.com/CindyLinz/Haskell-NoTrace
+[bf498e9]: https://github.com/CindyLinz/Haskell.js/commit/bf498e9d637d8fc002da678ee680c36585edcaf6#diff-4d68e937a77fba500701b96c962af3dfR107
 [Alt_l]: https://hackage.haskell.org/package/haskell-src-exts-1.17.1/docs/Language-Haskell-Exts-Annotated-Syntax.html#t:Alt
 
 # AlexLu
