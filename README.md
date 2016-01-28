@@ -66,6 +66,7 @@
   * [2015.12.10 #6: 寫 desugar 、自修 type check/inference](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.12.10.md)
   * [2015.12.24 #7: pattern matching 相關的 extensions](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2015.12.24.md)
   * [2016.1.14 #8: 補充上次漏講的 pattern matching 語法，聊聊 symbol table 的實作](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2016.1.14.md)
+  * [2016.1.28 #9: pattern matching 半成品與 a127 的 lambda interpreter](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2016.1.28.md)
 
 ## 輔助工具
 
