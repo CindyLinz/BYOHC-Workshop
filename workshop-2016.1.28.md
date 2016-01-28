@@ -141,7 +141,10 @@
 # a127a127
 
 * （interpreter）一開始沒有管 normal form ， weak normal form 的問題，結果在 [print][print_ir] 時還要另外處理。
-* 在 [`ast_to_ir`][ast_to_ir] 會先把 Lexical scoping 處理掉，在 environment 中記有哪些 symbol 。（**應補上圖片**
+* 在 [`ast_to_ir`][ast_to_ir] 會先把 Lexical scoping 處理掉，在 environment 中記有哪些 symbol 。
+
+  <img src="https://raw.githubusercontent.com/CindyLinz/BYOHC-Workshop/master/workshop-2016.1.28/IMG_0380.jpg" width="245" height="326" />
+
 * 從變數直接指到 parse 時看到的 lambda 的 name 。 scope 在第一次 parse 時就好了，沒有撞名的問題。
 * 跟一開始 AlexLu 找到的 de Bruijn Index 是一樣的，只是是 global 的 memory based index ， apply 後變成往上指的不用修，但是裡面的要修。 de Bruijn Index 則是 local 的（ apply 後要改往上指的，裡面的不用修）。
 * 然後 a127a127 和 CindyLinz 解釋了一下 de Bruijn Index 。
@@ -165,6 +168,9 @@
 * 證明就是用這些 rules 組合出來的一棵大樹。
 * favonia 舉了例子。（**應補上照片**
 * 可以挖洞，讓電腦去跟 rules 比較，一層一層找上去。把規則寫下來，指明那些是 inputs ，哪些是 outputs ，不用說明是加減也沒關係。
+
+  <img src="https://raw.githubusercontent.com/CindyLinz/BYOHC-Workshop/master/workshop-2016.1.28/IMG_0382.jpg" width="245" height="326" />
+
 * mode, logic programming 的 mode 。然後 favonia 稍微介紹了一下 Prolog 。
 * "total"
 * 有些很無聊但是程式不能不寫的狀況。
