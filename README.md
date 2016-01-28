@@ -25,7 +25,7 @@
 | [LCamel][LCamel]                    | JVM or WASM (browser)          | 還在想                                                                                   | [github](https://github.com/LCamel/BuildYourOwnHaskellCompiler) |
 | [瑋隆][weilongain]                  | Javascript (browser)           | 寫一個瀏覽器小遊戲                                                                       |                                                    |
 | [Eric][ericpony]                    | Scala                          | 讓已用 Agda 證明正確性的 Haskell 程式可以直接在 JVM 執行, 而不用手動翻譯成 Scala 或 Java |                                                    |
-| [127][a127a127]                     | coffeescript or LLVM           | 還在想                                                                                   |                                                    |
+| [127][a127a127]                     | coffeescript or LLVM           | 還在想                                                                                   | [github](https://github.com/a127a127/byohc) |
 | [Chia-Chi Chang][c3h3]              | Javascript or Python           | 還在想                                                                                   |                                                    |
 | [Kevin][ucfan]              | Javascript Scheme          | 還在想                                                                                   |                                                    |
 | [Kazami][Knight-X]              | C++           | 還在想                                                                                   |                                                    |
