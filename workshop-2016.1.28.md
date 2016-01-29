@@ -167,7 +167,7 @@
 
   * 做完這個後就[開始作 case 的 reorder 跟補沒有出現的 case ][1f41cea]。
 
-  * 會去找這個 case 中第一個出現的 WildCard ，當成 fallback 。（**應補上行數**
+  * 會去找這個 case 中[第一個出現的 WildCard ][wildcard]，當成 fallback 。
 
   * 沒有 WildCard 的話，會用一個內建的（[`defaultFallbackE`][defaultFallbackE]） `strE l "matching failed"` 。
 
@@ -184,6 +184,7 @@
 [Rename.hs]: https://github.com/op8867555/BYOHC-transpiler/blob/441736d27a4e1e3b80afb54f65b485e62cfbd738/src/Desugar/Rename/Rename.hs
 [outputLevel]: https://github.com/op8867555/BYOHC-transpiler/blob/2e992b851966f626a94232b528ec2520679ecbec/app/Main.hs#L47
 [1f41cea]: https://github.com/op8867555/BYOHC-transpiler/commit/1f41ceabd2d0b454265df2c4dc290f7bc5864824
+[wildcard]: https://github.com/op8867555/BYOHC-transpiler/blob/60eade1a159ac83a3a7da233c918996cf235cd7b/src/Desugar/Case/AltCompletion.hs#L488
 [defaultFallbackE]: https://github.com/op8867555/BYOHC-transpiler/blob/1f41ceabd2d0b454265df2c4dc290f7bc5864824/src/Desugar/Case/AltCompletion.hs#L482
 
 # a127a127
