@@ -80,7 +80,7 @@
     -- 後略
     ```
 
-  * 在做 desugar 時無法做 IO ，所以現在要看的話用 error 把他噴出去。要跑就用下面那個（`c`），要看就用上面那個（`error`） 。
+  * 在做 desugar 時無法做 IO ，所以現在要看的話用 error 把他[噴出去][error]。要跑就用下面那個（`c`），要看就用上面那個（`error`） 。
 
     ```
     in
@@ -88,7 +88,7 @@
       --c
     ```
 
-  * 第一步是把他變成我自己的資料結構（`FallbackGroup`），第二步是是把那個資料結構變成 code （`groupsToExp`）。（**應補上連結**
+  * 第一步是把他變成我[自己的資料結構][OrderedCase]，第二步是是把那個資料結構[變成 code ][orderedCaseToExp]。
 
   * js 有生出來，但是讓 node.js 跑沒有東西出來，很奇怪。顯然是哪個 case 有問題。
 
@@ -98,7 +98,7 @@
 
   * 有些已知 bug ，但（似乎）不是無法輸出的原因。
 
-  * `Just (Just ...` 好像被拆開了，還在找原因。（幾個小時後 CindyLinz [修正了這個問題][406d3be]
+  * `Just (Just ...` 好像被拆開了，還在找原因。（幾個小時後 CindyLinz [修正了這個問題][406d3be]）
 
   * pattern matching 一層層進去時，只有一個 `x` 時沒關係，但是有 `x1`, `x2` 時還是會打架。
 
@@ -138,6 +138,9 @@
 [case_reorder2]: https://github.com/CindyLinz/Haskell.js/blob/406d3be2fbc098a4f63d7b4a421ec30094f0405a/trans/sample/case_reorder2.hs
 [reorder_string]: https://github.com/CindyLinz/Haskell.js/blob/406d3be2fbc098a4f63d7b4a421ec30094f0405a/trans/sample/case_reorder2.hs#L14
 [desugar_manually]: https://github.com/CindyLinz/Haskell.js/blob/406d3be2fbc098a4f63d7b4a421ec30094f0405a/trans/sample/case_reorder.hs#L24
+[error]: https://github.com/CindyLinz/Haskell.js/blob/0768250077a56ffe572275867283a28ecd1a0627/trans/src/Desugar/CaseReorder.hs#L349
+[OrderedCase]: https://github.com/CindyLinz/Haskell.js/blob/0768250077a56ffe572275867283a28ecd1a0627/trans/src/Desugar/CaseReorder.hs#L12
+[orderedCaseToExp]: https://github.com/CindyLinz/Haskell.js/blob/0768250077a56ffe572275867283a28ecd1a0627/trans/src/Desugar/CaseReorder.hs#L139
 [haskell_src_exts]: https://hackage.haskell.org/package/haskell-src-exts
 [NoTrace]: https://github.com/CindyLinz/Haskell-NoTrace
 [406d3be]: https://github.com/CindyLinz/Haskell.js/blob/406d3be2fbc098a4f63d7b4a421ec30094f0405a/trans/src/DeCaseReorder.hs#L107
