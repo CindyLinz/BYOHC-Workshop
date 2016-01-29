@@ -12,7 +12,7 @@
 
 # CindyLinz
 
-  * 本來的目標是要作 [case\_reorder.hs][case_reorder.hs] ，發現還沒做字串（[case\_reorder2.hs][case_reorder2.hs]），會沒辦法用，所以做了[簡單版][reorder_string]。
+  * 本來的目標是要作 [case\_reorder.hs][case_reorder] ，發現還沒做字串（[case\_reorder2.hs][case_reorder2]），會沒辦法用，所以做了[簡單版][reorder_string]。
 
     ```
     -- 以下是在 workshop-2016.1.14.md 中誤記為出自 CollectData.hs 的內容
