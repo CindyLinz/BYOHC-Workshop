@@ -36,7 +36,9 @@
       | otherwise -> putStrLn "a all otherwise"
     ```
 
-  * otherwise 也還沒做，這邊是先寫 True 。
+  * `otherwise` 也還沒做，這邊是先寫 True 。
+
+    + [0768250][0768250] 後會特地看看是不是遇到 `otherwise` 。
 
   * 提了一下之前的目標，也就是上次那個[手工 desugar 的內容][desugar_manually]。
 
@@ -114,6 +116,8 @@
 
   * [`AltPartial`][AltPartial] 現在是錯的，在兩個洞以上會有問題。
 
+    + 後來[修好了][slot_begin]，「後來的改變就是把帶在函數參數的 b 改成放在資料結構裡面，不能只記一個 b 而假設它們編號連續. 而是會有好幾段, 所以記在資料結構裡面」
+
   * 在文件查 [`Alt l`][Alt_l] 就可以查到。
 
   * 講解 [`eatCons`][eatCons] 與下面使用 `AltPartial` 的例子。
@@ -137,6 +141,7 @@
 [case_reorder]: https://github.com/CindyLinz/Haskell.js/blob/406d3be2fbc098a4f63d7b4a421ec30094f0405a/trans/sample/case_reorder.hs
 [case_reorder2]: https://github.com/CindyLinz/Haskell.js/blob/406d3be2fbc098a4f63d7b4a421ec30094f0405a/trans/sample/case_reorder2.hs
 [reorder_string]: https://github.com/CindyLinz/Haskell.js/blob/406d3be2fbc098a4f63d7b4a421ec30094f0405a/trans/sample/case_reorder2.hs#L14
+[0768250]: https://github.com/CindyLinz/Haskell.js/commit/0768250077a56ffe572275867283a28ecd1a0627#diff-0210021cf846d427b82f56fc5ecbbe2dR186
 [desugar_manually]: https://github.com/CindyLinz/Haskell.js/blob/406d3be2fbc098a4f63d7b4a421ec30094f0405a/trans/sample/case_reorder.hs#L24
 [error]: https://github.com/CindyLinz/Haskell.js/blob/0768250077a56ffe572275867283a28ecd1a0627/trans/src/Desugar/CaseReorder.hs#L349
 [OrderedCase]: https://github.com/CindyLinz/Haskell.js/blob/0768250077a56ffe572275867283a28ecd1a0627/trans/src/Desugar/CaseReorder.hs#L12
@@ -146,9 +151,10 @@
 [406d3be]: https://github.com/CindyLinz/Haskell.js/blob/406d3be2fbc098a4f63d7b4a421ec30094f0405a/trans/src/DeCaseReorder.hs#L107
 [rhsToExp]: https://github.com/CindyLinz/Haskell.js/blob/406d3be2fbc098a4f63d7b4a421ec30094f0405a/trans/src/DeCaseReorder.hs#L165
 [AltPartial]: https://github.com/CindyLinz/Haskell.js/blob/406d3be2fbc098a4f63d7b4a421ec30094f0405a/trans/src/DeCaseReorder.hs#L55
+[slot_begin]: https://github.com/CindyLinz/Haskell.js/commit/f7c81c6bcc5cb942e29329652c8c437d2b2c9be9#diff-0210021cf846d427b82f56fc5ecbbe2dR56
 [Alt_l]: https://hackage.haskell.org/package/haskell-src-exts-1.17.1/docs/Language-Haskell-Exts-Annotated-Syntax.html#t:Alt
 [eatCons]: https://github.com/CindyLinz/Haskell.js/blob/406d3be2fbc098a4f63d7b4a421ec30094f0405a/trans/src/DeCaseReorder.hs#L104
-[rhs]: https://github.com/CindyLinz/Haskell.js/blob/406d3be2fbc098a4f63d7b4a421ec30094f0405a/trans/src/DeCaseReorder.hs#L189
+[rhs]: https://github.com/CindyLinz/Haskell.js/commit/1d569ea14d41d8a80d16f4e89fef03c94197280d#diff-0210021cf846d427b82f56fc5ecbbe2dR142
 [traceShowId]: http://hackage.haskell.org/package/base-4.8.2.0/docs/Debug-Trace.html#v:traceShowId
 [traceShow]: http://hackage.haskell.org/package/base-4.8.2.0/docs/Debug-Trace.html#v:traceShow
 [trace]: http://hackage.haskell.org/package/base-4.8.2.0/docs/Debug-Trace.html#v:trace
