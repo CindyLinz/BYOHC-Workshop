@@ -114,7 +114,7 @@
 
   * 每次都拆成有 match 到和沒有 match 到，沒有就回傳一個 fallback 回來。現在想要理解他的時候，已經不知道要怎麼處理了。（[`expandRhs`][expandRhs]）
 
-  * 後來發現 pattern guard 在 2015 年已經是標準了。
+  * 後來發現 pattern guard 在 Haskell 2010 已經是標準了。
 
   * 解釋 543 行附近是怎麼[展開成 lambda 的][expand-lambda]。
 
