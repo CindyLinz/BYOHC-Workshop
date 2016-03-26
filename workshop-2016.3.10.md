@@ -353,7 +353,7 @@
   
   * CindyLinz 請大家回去想想可以做什麼 browser 上的應用。而自己要開始傷腦筋 type 了。
   
-  * ssuio 提到初學該看什麼？（除了 AlexLu 提到的 Real World Haskell 之外） CindyLinz 提到自己一開始看的是 [YAHT][YATH] 。現在讀到一本還不錯，叫 [Beginning Haskell][BeginningHaskell] 。數學家適合 Haskell Tutorial ，而工程師適合讀 Beginning Haskell ，因為他是從 code 寫下去會有什麼效果開始講。
+  * ssuio 提到初學該看什麼？（除了 AlexLu 提到的 Real World Haskell 之外） CindyLinz 提到自己一開始看的是 [YAHT][YAHT] 。現在讀到一本還不錯，叫 [Beginning Haskell][BeginningHaskell] 。數學家適合 Haskell Tutorial ，而工程師適合讀 Beginning Haskell ，因為他是從 code 寫下去會有什麼效果開始講。
   
   * [Real World Haskell][RealWorldHaskell] 可以讀，但讀完還是會有距離。還可以讀 [24 Days of GHC Extensions][24Days] 。 CindyLinz 表示自己以前學時沒有這種教材，只好一個一個看，看了很多沒有用的，還給你論文的連結。
   
