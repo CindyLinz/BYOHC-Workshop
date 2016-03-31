@@ -69,6 +69,7 @@
   * [2016.1.28 #9: pattern matching 半成品與 a127 的 lambda interpreter](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2016.1.28.md)
   * [2016.2.18 #10: import / export 語法與語意，還有 pattern matching 的重大進展](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2016.2.18.md)
   * [2016.3.10 #11: STM (部分)與 pattern binding](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2016.3.10.md)
+  * [2016.3.31 #12: Haskell Web 應用](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2016.3.31.md)
 
 ## 輔助工具
 
