@@ -159,7 +159,13 @@
 
   * 畫圖時用到 64 個點，也可以設成 4 個點。試到 256 發現它有點慢， 64 是個還不錯的數字。
   
-  * 沒有用到 Haskell 很難的 extension ，但是 code 本身還滿難的。發現自己寫出了五六年前讀的 code 中那種很難的 type 。（**應該問清當年讀的是哪些人的 code **）
+  * 沒有用到 Haskell 很難的 extension ，但是 code 本身還滿難的。發現自己寫出了五六年前讀的 code 中那種很難的 type 。
+
+    * CindyLinz 表示當年看不懂的 package 是 [Conduit][Conduit] ：
+
+      「你看那個 data Pipe, 和這次的 data BuilderPart 有類似的構造.. 不過他的參數多很多」
+
+      「他是 Michael Snoyman a.k.a. snoyberg a.k.a. Yesod 作者 a.k.a. Stack 作者 a.k.a. Conduit 作者」
   
   * 和靜態結構有關的程式碼（`box`, `ellipse` 下面的），和與靜態結構無關的程式碼（`link` 和 `name`）。
   
@@ -282,7 +288,7 @@
   
   * Lens 有 template 函數。
   
-  * 但是現在的 [ContextState.hs][ContextState.hs] 是用 vim script 生出來的。沒有用到 Template Haskell 。
+  * 但是現在的 [ContextState.hs][ContextState.hs] 是用 vim 巨集生出來的，隨手錄隨手播。沒有用到 Template Haskell 。
   
   * CindyLinz 表示 `forBuilderPart` 也是後來才 refactor 出來的。 refactor 出來後的東西常常是數學上有名字東西，只是當下不知道。
   
@@ -374,6 +380,7 @@
   [ContextState.hs]: https://github.com/CindyLinz/Haskell-HVG/blob/f6e9401648943e13bcf801c7b5e25400c90606c1/src/HVG/ContextState.hs
   [Entity.hs]: https://github.com/CindyLinz/Haskell-HVG/blob/f6e9401648943e13bcf801c7b5e25400c90606c1/test/Entity.hs
   [DSL]: https://en.wikipedia.org/wiki/Domain-specific_language
+  [Conduit]: https://hackage.haskell.org/package/conduit-1.2.6.4/docs/src/Data-Conduit-Internal-Pipe.html#Pipe
 
 # 雜談
 
