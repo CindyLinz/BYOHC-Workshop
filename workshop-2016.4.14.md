@@ -86,8 +86,6 @@
 
   * LCamel 問到 Monoid 和 Monad 的關係。 CindyLinz 提到：「[A monad is just a monoid in the category of endofunctors, what's the issue?][monad-monoid-endofunctors]」這句話 XD
 
-    [monad-monoid-endofunctors]: http://stackoverflow.com/questions/3870088/a-monad-is-just-a-monoid-in-the-category-of-endofunctors-whats-the-issue
-
   * Monad 只在 `(a -> m a)` 時是 Monoid 。這時就能把 `(>>=)` 看成 Monoid 的 `(<>)` 。 endofunctor 就是吃一樣的東西。
 
     ```
@@ -241,11 +239,7 @@
 
   * CindyLinz 表示有些 Monad 長得很詭異，像 [`ContT`][ContT] 的 `runContT :: (a -> m r) -> m r` 中的 a 就不是放在後面，而是在前面的函數拿到 `a` 。 `ContT` 可以做到 `long jmp` 或是 `coroutine` 的效果。
 
-    [ContT]: https://hackage.haskell.org/package/mtl-2.2.1/docs/Control-Monad-Cont.html#g:2
-
   * [`sequence :: Monad m => t (m a) -> m (t a)`][sequence] 可以用來把 List 和 Monad 交換。
-
-    [sequence]: http://hackage.haskell.org/package/base-4.8.2.0/docs/Data-Traversable.html#v:sequence
 
   * Traversable 是 Functor 也是 Foldable ，大部分的 container 都有這樣的特性。
 
@@ -264,6 +258,10 @@
     -- 變成
     uncurry (flip (fmap . flip (,)))
     ```
+
+  [monad-monoid-endofunctors]: http://stackoverflow.com/questions/3870088/a-monad-is-just-a-monoid-in-the-category-of-endofunctors-whats-the-issue
+  [ContT]: https://hackage.haskell.org/package/mtl-2.2.1/docs/Control-Monad-Cont.html#g:2
+  [sequence]: http://hackage.haskell.org/package/base-4.8.2.0/docs/Data-Traversable.html#v:sequence
 
 # 下次聚會時間
 
