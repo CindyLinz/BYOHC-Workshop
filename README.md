@@ -71,6 +71,8 @@
   * [2016.3.10 #11: STM (部分)與 pattern binding](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2016.3.10.md)
   * [2016.3.31 #12: Haskell Web 應用](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2016.3.31.md)
   * [2016.4.14 #13: 討論確認之後活動進行的方式](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2016.4.14.md)
+  * 2016.4.28 #14: 用 stack 建立專案，大家一起讀 modules 然後 pretty print
+  * [2016.5.12 #15: 上週進度加上兩個 bonus 支線任務](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2016.5.12.md)
 
 ## 輔助工具
 
