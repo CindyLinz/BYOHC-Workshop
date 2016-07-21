@@ -17,7 +17,7 @@
 | [YunLiaw][YunLiaw]                  |                                | 還在想                                                                                   |                                                    |
 | [Kelly/Kai][rasca0027]              |                                | 還在想                                                                                   |                                                    |
 | [AlexLu][op8867555]                 | Python                         | 用 Python 執行的一個用 Haskell 寫的 Haskell compiler                                     | [lambda interpreter](https://github.com/op8867555/BYOHC), [transpiler](https://github.com/op8867555/BYOHC-transpiler)      |
-| [卡西][caasi]                       | WASM or Javascript             | 做個 lambda-wasm-prototype 之類的工具                                                    | [ulc.ls](https://github.com/caasi/ulc.ls), [playground](https://github.com/caasi/ulc-playground)      |
+| [卡西][caasi]                       | WASM or Javascript             | 做個 lambda-wasm-prototype 之類的工具                                                    | [ulc.ls](https://github.com/caasi/ulc.ls), [playground](https://github.com/caasi/ulc-playground), [trans](https://github.com/caasi/trans)      |
 | [GeorgeLi][Georgefs]                | Python                         | 理解 Haskell                                                                             | [github](https://github.com/georgefs/BYOHC-Workshop)                                                  |
 | [Summit][suensummit]                | Python                         | 還在想                                                                                   |                                                    |
 | [Carl][Carl-Lin]                    | Javascript (node.js + browser) | 在公司 production 環境用                                                                 |                                                    |
@@ -73,6 +73,10 @@
   * [2016.4.14 #13: 討論確認之後活動進行的方式](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2016.4.14.md)
   * 2016.4.28 #14: 用 stack 建立專案，大家一起讀 modules 然後 pretty print
   * [2016.5.12 #15: 上週進度加上兩個 bonus 支線任務](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2016.5.12.md)
+  * 2016.5.26 #16: 實作 desugar 骨幹
+  * 2016.6.9 #17: 實作 desugar 骨幹
+  * 2016.6.30 #18: 實作 desugar 骨幹
+  * [2016.7.21 #19: 實作 desugar 骨幹](https://github.com/CindyLinz/BYOHC-Workshop/blob/master/workshop-2016.7.21.md)
 
 ## 輔助工具
 
